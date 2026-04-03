@@ -181,8 +181,16 @@
           <div class="format-opt" onclick="selectFormat(this,'audio')"><div class="f-name">🎵 Audio</div><div class="f-detail">MP3 · 320kbps</div></div>
           <div class="format-opt" onclick="selectFormat(this,'webm')"><div class="f-name">🌐 WebM</div><div class="f-detail">Web Optimized</div></div>
         </div>
-        <button class="btn btn-primary" style="margin-top:0.5rem;width:100%;justify-content:center;font-size:1rem;padding:1rem" onclick="downloadVideo()">⬇️ Download Video</button>
-        <div class="download-note">⚠️ <strong>Note:</strong> Only download videos you have the right to download. Respect creators' copyrights. For YouTube, <a href="https://cobalt.tools/" target="_blank" style="color:var(--accent4)">cobalt.tools</a> gives the best results.</div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;margin-top:0.5rem"onclick="showDownloader()">⬇️ Download Video</button>
+        <div id="dlFrame" style="display:none;margin-top:1.5rem;border-radius:16px;overflow:hidden;border:1.5px solid var(--border);height:500px">
+          <iframe
+            src="https://cobalt.tools/"
+            width="100%"
+            height="100%"
+            style="border:none"
+            allow="clipboard-write">
+          </iframe>
+        </div>
       </div>
     </div>
   </section>
