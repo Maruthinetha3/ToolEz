@@ -46,20 +46,14 @@ function processVideo() {
 }
 
 // ─── DOWNLOAD VIDEO ───────────────────────────────
-function downloadVideo() {
+async function downloadVideo() {
   const url = document.getElementById('videoUrl')?.value.trim();
-  if (!url) { toast('Please paste a video URL first', 'error'); return; }
-  if (!isValidURL(url)) { toast('Please enter a valid URL', 'error'); return; }
-
-  toast(`Opening cobalt.tools — paste the same URL there to download ✅`, 'info');
-
-  // cobalt.tools supports: YouTube, Instagram, TikTok, Twitter, Facebook,
-  // Vimeo, Reddit, Dailymotion and more — best open-source video downloader API
-  const cobaltUrl = 'https://cobalt.tools/';
-  setTimeout(() => {
-    window.open(cobaltUrl, '_blank');
-    toast('Paste your URL into cobalt.tools for the cleanest download experience ✅', 'success');
-  }, 800);
+  if (!url) { toast('Paste a URL first', 'error'); return; }
+  
+  const serverUrl = `https://toolez-backend.onrender.com/download?url=${encodeURIComponent(url)}`;
+  
+  toast('Fetching video...', 'info');
+  window.location.href = serverUrl; // triggers download directly
 }
 
 // ─── HELPERS ──────────────────────────────────────
