@@ -64,7 +64,6 @@
       </div>
     </div>
   </section>
-
   <!-- ════════════════════════════════
        PDF TOOLS
   ════════════════════════════════ -->
@@ -94,7 +93,7 @@
         <div class="featured-cta">Open Tool →</div>
       </div>
     </div>
-
+    
     <!-- Category tabs -->
     <div class="cat-tabs reveal">
       <button class="cat-tab active" onclick="filterPDF('all',this)">All</button>
@@ -145,6 +144,7 @@
   <!-- ════════════════════════════════
        VIDEO DOWNLOADER
   ════════════════════════════════ -->
+  
   <div class="divider"></div>
   <section class="section section-anchor" id="video-tools">
     <div class="section-header reveal">
@@ -181,15 +181,46 @@
           <div class="format-opt" onclick="selectFormat(this,'audio')"><div class="f-name">🎵 Audio</div><div class="f-detail">MP3 · 320kbps</div></div>
           <div class="format-opt" onclick="selectFormat(this,'webm')"><div class="f-name">🌐 WebM</div><div class="f-detail">Web Optimized</div></div>
         </div>
-        <button class="btn btn-primary" style="margin-top:0.5rem;width:100%;justify-content:center;font-size:1rem;padding:1rem" onclick="downloadVideo()">⬇️ Download Video</button>
-        <div class="download-note">⚠️ <strong>Note:</strong> Only download videos you have the right to download. Respect creators' copyrights. For YouTube, <a href="https://cobalt.tools/" target="_blank" style="color:var(--accent4)">cobalt.tools</a> gives the best results.</div>
-      </div>
+        <button class="btn btn-primary"
+          id="dlBtn"
+          style="margin-top:0.5rem;width:100%;justify-content:center;
+                 font-size:1rem;padding:1rem"
+          onclick="downloadVideo()">
+          ⬇️ Download Video
+        </button>
+        
+        <!-- Download result box -->
+        <div id="dlResult"
+          style="display:none;margin-top:1rem;background:var(--bg3);
+                 border:1.5px solid var(--border);border-radius:16px;padding:1.25rem">
+          <div style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem">
+            ✅ Ready — click below to save your file
+          </div>
+          <a id="dlLink" href="#"
+            download
+            style="display:flex;align-items:center;justify-content:center;gap:0.5rem;
+                   background:var(--accent);color:#fff;padding:0.9rem 1.5rem;
+                   border-radius:99px;font-weight:600;font-size:0.95rem;
+                   text-decoration:none;transition:opacity 0.2s">
+            ⬇️ Click Here to Download
+          </a>
+          <div id="dlTitle"
+            style="font-size:0.78rem;color:var(--text-dim);
+                   margin-top:0.5rem;text-align:center">
+          </div>
+        </div>
+        
+        <div class="download-note">
+          ⚡ Video downloads powered by ToolEz servers.
+          Supports YouTube, Instagram, TikTok, Twitter/X, Reddit, Vimeo and more.
+        </div>
     </div>
   </section>
 
   <!-- ════════════════════════════════
        AI TOOLS DIRECTORY
   ════════════════════════════════ -->
+  
   <div class="divider"></div>
   <section class="section section-anchor" id="ai-tools">
     <div class="section-header reveal">
